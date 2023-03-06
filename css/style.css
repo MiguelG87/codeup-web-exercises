@@ -1,4 +1,14 @@
+#top{
+    color: whitesmoke;
+    text-align: center;
+
+}
 .fancy-header{
-    color: blueviolet;
-    text-decoration: blue;
+    color: #44798e;
+    text-decoration: underline;
+    text-decoration-color: #9678b6;
+}
+
+body{
+    background-image: linear-gradient(to bottom right, yellow, green, orange);
 }
