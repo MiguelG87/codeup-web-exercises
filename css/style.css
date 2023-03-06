@@ -1,10 +1,7 @@
-#top{
+#top {
     color: whitesmoke;
     text-align: center;
-    background-image: url("../img/space.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-
+    text-shadow: rebeccapurple;
 }
 .fancy-header{
     color: #00b4ff;
@@ -17,7 +14,12 @@ body{
     font-family: monospace;
     font-size: 20px;
     color: whitesmoke;
-    background-image: radial-gradient(#2a4c9e, #2446a9, #183b92, #061b3a, #000b18, #00050e);
+    background-image: url("../img/space.jpg");
+    min-height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .center {
     text-align: center;
@@ -26,6 +28,7 @@ body{
     list-style: square;
     display: inline-block;
     text-align: left;
+    padding: 10px;
 }
 td, th{
     border-collapse: collapse;
@@ -43,4 +46,10 @@ a:hover {
 }
 a:active {
     color: blue;
+}
+#align, #blur, .fancy-header {
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    margin: auto;
+
 }
