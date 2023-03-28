@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Faq</title>
+</head>
+<body>
+<p>National Parks FAQ's</p>
+<dl>
+  <dt>1. What is a national park?</dt>
+  <dd class="invisible">A national park is a protected area of land that is managed by the government to preserve its natural, cultural, and historic resources.</dd>
+
+  <dt>2. How many national parks are there in the US?</dt>
+  <dd class="invisible">There are currently 63 national parks in the United States.</dd>
+
+  <dt>3. When was the first national park established?</dt>
+  <dd class="invisible">Yellowstone National Park was established in 1872 and was the first national park in the world.</dd>
+
+  <dt>4. What is the most visited national park?</dt>
+  <dd class="invisible">Great Smoky Mountains National Park is the most visited national park in the US.</dd>
+
+  <dt>5. What is the largest national park?</dt>
+  <dd class="invisible">Wrangell-St. Elias National Park and Preserve in Alaska is the largest national park in the US, with over 13 million acres of land.</dd>
+
+  <dt>6. What is the smallest national park?</dt>
+  <dd class="invisible">Hot Springs National Park in Arkansas is the smallest national park in the US, with only 5,550 acres of land.</dd>
+
+  <dt>7. What is the oldest national park east of the Mississippi River?</dt>
+  <dd class="invisible">Acadia National Park in Maine is the oldest national park east of the Mississippi River, established in 1916.</dd>
+
+  <dt>8. What is the only national park in New York City?</dt>
+  <dd class="invisible">Gateway National Recreation Area is the only national park in New York City, consisting of three units in Queens, Brooklyn, and Staten Island.</dd>
+
+  <dt>9. What is the highest peak in a national park?</dt>
+  <dd class="invisible">Denali (formerly known as Mount McKinley) is the highest peak in a US national park, located in Denali National Park and Preserve in Alaska, with an elevation of 20,310 feet (6,190 meters).</dd>
+
+  <dt>10. What is the deepest lake in a national park?</dt>
+  <dd class="invisible">Crater Lake in Oregon is the deepest lake in a US national park, with a maximum depth of 1,943 feet (592 meters).</dd>
+</dl>
+<button type="button" class="toggle-button">Toggle Here</button>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<style>
+  .invisible {
+    visibility: hidden;
+  }
+  .highlight {
+    background-color: blueviolet;
+  }
+  p, dt {
+    font-weight: bold;
+  }
+
+  dl, dd {
+    font-size: 0.9rem;
+  }
+
+  dd {
+    margin: 1em;
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    $('dt').click(function () {
+      $(this).toggleClass('highlight');
+
+    });
+    $('.toggle-button').click(function () {
+      $('dd').toggleClass('invisible');
+    });
+  });
+</script>
+</body>
+</html>
