@@ -7,11 +7,24 @@
 <body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $("document").ready(function (){
-        $('li').css("font-size", "20px");
-        $("h1, p, li").css("background-color", "yellow");
-        alert($("h1").text());
+    $("document").ready(function () {
+        $("h1").click(function () {
+            $("h1").css("background-color", "yellow");
+        });
+        $("p").dblclick(function () {
+            $("p").css("font-size", "18px");
+        });
+        $("li").hover(func1, func2);
+
+        function func1() {
+            $("li").css("color", "red");
+        }
+
+        function func2() {
+            $("li").css("color", "black");
+        }
     });
+
 
 </script>
 <h1 class="title" id="title">Title of the Page</h1>
