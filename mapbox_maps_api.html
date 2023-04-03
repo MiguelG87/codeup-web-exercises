@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'>
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWlndWVsZzg3IiwiYSI6ImNsZnY4MTN3ejA0a3AzZHNhaGl2OHBwbGsifQ.xfYfNaoOoZnnp8-STalwCw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        zoom: 10.2, // starting zoom
+        center: [-118.2437, 34.0522] // [lng, lat]
+    });
+    /*let restaurants = [];
+    ["Roscoes", "King", "Sals"].forEach(function (name) {
+        let restaurant = {
+            name: name,
+            cuisine: "Unknown",
+            description: "Unknown",
+        };
+
+        restaurants.push(restaurant);
+    });
+    let html = "<div>" +
+        "<h2>" + "${restaurants.name}" + "</h2>" +
+        "<p>" + "Cuisine: ${restaurants.cuisine}"+"</p>" +
+        "<p>" + "Description: ${restaurants.description}" + "</p>" +
+        "</div";*/
+
+    //<----------------Location 1----------------->
+    var cocosMarker = new mapboxgl.Marker()
+        //setting marker object location
+        .setLngLat([-118.274420, 33.959901])
+        //adding marker to map
+        .addTo(map);
+    let cocosPopup = new mapboxgl.Popup()
+        .setLngLat([-118.274420, 33.959901])
+        .setHTML("<h1>Roscoe's House of Chicken and Waffles</h1><h4>Cuisine: </h4><p>Soul, Southern</p><h4>Description: </h4><p>Roscoe's House of Chicken and Waffles specializes in serving a combination of fried chicken and waffles, which has become a signature dish. The menu at Roscoe's also includes other Southern and soul food dishes, such as grits, mac and cheese, collard greens, and sweet potato pie.</p>")
+    cocosMarker.setPopup(cocosPopup);
+    //<---------------Location 2------------------>
+    var kingMarker = new mapboxgl.Marker()
+        //setting marker object location
+        .setLngLat([-118.168859, 34.033021])
+        //adding marker to map
+        .addTo(map);
+    let kingPopup = new mapboxgl.Popup()
+        .setLngLat([-118.168859, 34.033021])
+        .setHTML("<h2>King Taco #2</h2><h4>Cuisine: </h4><p>Mexican</p><h4>Description: </h4><p>King Taco offers a variety of Mexican-inspired dishes, including soft tacos, burritos, sopes, tamales, nachos, and rotisserie chicken.</p>")
+    kingMarker.setPopup(kingPopup);
+    //<--------------Location 3------------------->
+    var salsMarker = new mapboxgl.Marker()
+        //setting marker object location
+        .setLngLat([-118.338135, 34.094777])
+        //adding marker to map
+        .addTo(map);
+    let salsPopup = new mapboxgl.Popup()
+        .setLngLat([-118.338135, 34.094777])
+        .setHTML("<h2>Fat Sal's Deli</h2><h4>Cuisine: </h4><p>American</p><h4>Description: </h4><p>Fat Sal's Deli is known for its over-the-top sandwiches. Some of the most popular menu items include the Fat Texas BBQ sandwich, the Fat Jerry sandwich, and the Fat Joey sandwich.</p>")
+    salsMarker.setPopup(salsPopup);
+</script>
+</body>
+</html>
