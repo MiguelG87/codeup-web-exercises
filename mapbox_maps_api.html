@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>First Mapbox Map</title>
-    <!-- Mapbox JS -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
-    <!-- Mapbox CSS -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'>
     <style>
         #map {
-            /* the width and height may be set to any size */
             width: 100%;
             height: 700px;
         }
@@ -18,12 +15,7 @@
 <body>
 
 <h1>My First Mapbox Map!</h1>
-
-<!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
-
-
-<!-- Custom JS -->
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibWlndWVsZzg3IiwiYSI6ImNsZnY4MTN3ejA0a3AzZHNhaGl2OHBwbGsifQ.xfYfNaoOoZnnp8-STalwCw';
     var map = new mapboxgl.Map({
