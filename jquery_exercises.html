@@ -7,24 +7,29 @@
 <body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(function () {
-        alert('The DOM has finished loading!');
+    $("document").ready(function (){
+        $('li').css("font-size", "20px");
+        $("h1, p, li").css("background-color", "yellow");
+        alert($("h1").text());
     });
+
 </script>
-<h1 class="title" id="header">Title of the Page</h1>
-<div class="myDiv" id="myDiv">
-    <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci amet beatae
+<h1 class="title" id="title">Title of the Page</h1>
+<div class="codeUp" id="myDiv1">
+    <p class="paragraph1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci amet beatae
         consequuntur debitis dolor enim incidunt itaque laboriosam molestiae nemo non omnis quis quo recusandae, sequi
-        totam voluptates?</p>
-    <ul class="list">
-        <li>Item 1</li>
+        totam voluptates?
+    </p>
+</div>
+<div>
+    <ul class="ulList">
+        <li class="codeUp">Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
         <li>Item 4</li>
         <li>Item 5</li>
     </ul>
 </div>
-<div class="footer" id="myDiv">Brand name!</div>
-
+<div class="codeUp" id="myDiv2">Brand name!</div>
 </body>
 </html>

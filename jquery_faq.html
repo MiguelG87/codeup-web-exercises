@@ -89,6 +89,25 @@
     </ul>
 </div>
 <button type="button" id="background">Click here</button>
+<br>
+<div class="image-container">
+    <img src="img/office1.jpeg">
+    <div class="button-container">
+        <button>Swap</button>
+    </div>
+</div>
+<div class="image-container">
+    <img src="img/office2.jpeg">
+    <div class="button-container">
+        <button>Swap</button>
+    </div>
+</div>
+<div class="image-container">
+    <img src="img/nature1.jpeg">
+    <div class="button-container">
+        <button>Swap</button>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
         crossorigin="anonymous"></script>
 <style>
@@ -118,6 +137,29 @@
 
     .blue {
         color: blue;
+    }
+
+    .image-container {
+        display: inline-block;
+        width: 33%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .button-container button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
     }
 </style>
 <script>
