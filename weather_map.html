@@ -12,116 +12,126 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link href="css/weather_map_css.css" rel="stylesheet">
 <body class="container-fluid">
-<nav class="navbar bg-body-tertiary bg-dark" data-bs-theme="dark" style="color: white">
-    <div class="container-fluid">
-        <a class="navbar-brand" style="color: white">Weather Map</a>
-        <span id="currentCity" class="navbar-text city">
-
-    </span>
+<div id="container">
+    <div id="box1">
+        <nav class="navbar" data-bs-theme="dark" style="color: white; background-color: black">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="color: white">Weather Map</a>
+                <span id="currentCity" class="navbar-text city"></span>
+            </div>
+        </nav>
+        <nav class="navbar " id="navbar2">
+            <div class="container-fluid">
+                <form class="d-flex" role="search">
+                    <label for="searchBtn" class="navbar-text place text-white">Place: </label>
+                    <input id="searchInput" class="form-control-dark me-2" type="search" placeholder="Search Location"
+                           aria-label="Search">
+                    <button class="btn btn-outline-primary text-white" type="submit" id="searchBtn">Search</button>
+                    <div id="menu">
+                        <input id="streets-v12" type="radio" name="rtoggle" value="streets" checked="checked">
+                        <label for="streets-v12">Day</label>
+                        <input id="dark-v11" type="radio" name="rtoggle" value="dark">
+                        <label for="dark-v11">Night</label>
+                        <input id="satellite-streets-v12" type="radio" name="rtoggle" value="satellite">
+                        <label for="satellite-streets-v12">Satellite</label>
+                    </div>
+                </form>
+                <button class="btn btn-danger btn-sm float-end" type="reset" id="exitBtn">X</button>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="row results" id="results">
+                <div class="col weather">
+                    <div class="card">
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="card-text" id="date1"></li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <p class="card-text" id="weather1"></p>
+                            <div id="weatherCode1"></div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="description1"></li>
+                            <li class="list-group-item" id="humidity1"></li>
+                            <li class="list-group-item" id="wind1"></li>
+                            <li class="list-group-item" id="pressure1"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col weather">
+                    <div class="card">
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="card-text" id="date2"></li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <p class="card-text" id="weather2"></p>
+                            <div id="weatherCode2"></div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="description2"></li>
+                            <li class="list-group-item" id="humidity2"></li>
+                            <li class="list-group-item" id="wind2"></li>
+                            <li class="list-group-item" id="pressure2"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col weather">
+                    <div class="card">
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="card-text" id="date3"></li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <p class="card-text" id="weather3"></p>
+                            <div id="weatherCode3"></div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="description3"></li>
+                            <li class="list-group-item" id="humidity3"></li>
+                            <li class="list-group-item" id="wind3"></li>
+                            <li class="list-group-item" id="pressure3"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col weather">
+                    <div class="card">
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="card-text" id="date4"></li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <p class="card-text" id="weather4"></p>
+                            <div id="weatherCode4"></div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="description4"></li>
+                            <li class="list-group-item" id="humidity4"></li>
+                            <li class="list-group-item" id="wind4"></li>
+                            <li class="list-group-item" id="pressure4"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col weather">
+                    <div class="card">
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="card-text" id="date5"></li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <p class="card-text" id="weather5"></p>
+                            <div id="weatherCode5"></div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" id="description5"></li>
+                            <li class="list-group-item" id="humidity5"></li>
+                            <li class="list-group-item" id="wind5"></li>
+                            <li class="list-group-item" id="pressure5"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
-</nav>
-<nav class="navbar bg-body-tertiary" style="background-color: white">
-    <div class="container-fluid">
-        <form class="d-flex" role="search">
-            <label for="searchBtn" class="navbar-text place">Place: </label>
-            <input id="searchInput" class="form-control-dark me-2" type="search" placeholder="Search Location"
-                   aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit" id="searchBtn">Search</button>
-        </form>
-        <button class="btn btn-danger btn-sm float-end"  type="reset" id="exitBtn">X</button>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="row results" id="results">
-        <div class="col weather">
-            <div class="card">
-                <ul class="list-group list-group-flush text-center">
-                    <li class="card-text" id="date1"></li>
-                </ul>
-                <div class="card-body text-center">
-                    <p class="card-text" id="weather1"></p>
-                    <div id="weatherCode1"></div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="description1"></li>
-                    <li class="list-group-item" id="humidity1"></li>
-                    <li class="list-group-item" id="wind1"></li>
-                    <li class="list-group-item" id="pressure1"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col weather">
-            <div class="card">
-                <ul class="list-group list-group-flush text-center">
-                    <li class="card-text" id="date2"></li>
-                </ul>
-                <div class="card-body text-center">
-                    <p class="card-text" id="weather2"></p>
-                    <div id="weatherCode2"></div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="description2"></li>
-                    <li class="list-group-item" id="humidity2"></li>
-                    <li class="list-group-item" id="wind2"></li>
-                    <li class="list-group-item" id="pressure2"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col weather">
-            <div class="card">
-                <ul class="list-group list-group-flush text-center">
-                    <li class="card-text" id="date3"></li>
-                </ul>
-                <div class="card-body text-center">
-                    <p class="card-text" id="weather3"></p>
-                    <div id="weatherCode3"></div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="description3"></li>
-                    <li class="list-group-item" id="humidity3"></li>
-                    <li class="list-group-item" id="wind3"></li>
-                    <li class="list-group-item" id="pressure3"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col weather">
-            <div class="card">
-                <ul class="list-group list-group-flush text-center">
-                    <li class="card-text" id="date4"></li>
-                </ul>
-                <div class="card-body text-center">
-                    <p class="card-text" id="weather4"></p>
-                    <div id="weatherCode4"></div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="description4"></li>
-                    <li class="list-group-item" id="humidity4"></li>
-                    <li class="list-group-item" id="wind4"></li>
-                    <li class="list-group-item" id="pressure4"></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col weather">
-            <div class="card">
-                <ul class="list-group list-group-flush text-center">
-                    <li class="card-text" id="date5"></li>
-                </ul>
-                <div class="card-body text-center">
-                    <p class="card-text" id="weather5"></p>
-                    <div id="weatherCode5"></div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="description5"></li>
-                    <li class="list-group-item" id="humidity5"></li>
-                    <li class="list-group-item" id="wind5"></li>
-                    <li class="list-group-item" id="pressure5"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-<div id="map"></div>
+    <div id="map"></div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -133,25 +143,54 @@
         zoom: 10.2,
         center: [-97.309341, 32.768799]
     });
+    const layerList = document.getElementById('menu');
+    const inputs = layerList.getElementsByTagName('input');
+
+    for (const input of inputs) {
+        input.onclick = (layer) => {
+            const layerId = layer.target.id;
+            map.setStyle('mapbox://styles/mapbox/' + layerId);
+        };
+    }
     const marker = new mapboxgl.Marker()
         .setLngLat([-97.309341, 32.768799])
         .addTo(map);
     marker.on('dragend', updateMarkerCoordinates);
-    map.on('click', (event) => {
-        const newLngLat = event.lngLat;
-        marker.setLngLat(newLngLat);
-        console.log(newLngLat.lat);
-        updateMarkerCoordinates();
-        displayWeatherData(newLngLat.lat, newLngLat.lng);
-        $('#results').css('display', 'flex');
-        $('#exitBtn').css('display', 'flex');
-
-    });
     $(document).ready(function () {
+        map.on('click', (event) => {
+            const newLngLat = event.lngLat;
+            marker.setLngLat(newLngLat);
+            console.log(newLngLat.lat);
+            updateMarkerCoordinates();
+            displayWeatherData(newLngLat.lat, newLngLat.lng);
+            $('#results').css('display', 'flex');
+            $('#exitBtn').css('display', 'flex');
+            $('#map').css({
+                "position": "absolute",
+                "top": "250px",
+                "left": "1%",
+                "height": "calc(100% - 100px)",
+                "width": "99%",
+                "z-index": "0"
+            });
+            $('#box1').css({"position": "absolute", "width": "98%", "z-index": "1"});
+
+        });
         $('#searchBtn').click(function (event) {
             event.preventDefault();
             $('#results').css('display', 'flex');
             $('#exitBtn').css('display', 'flex');
+            $('#map').css({
+                "position": "absolute",
+                "top": "250px",
+                "left": "1%",
+                "right": "1%",
+                "height": "calc(100% - 100px)",
+                "width": "100%",
+                "z-index": "0"
+            });
+            $('#box1').css({"position": "absolute", "width": "100%", "z-index": "1"});
+            $('.container').css({"position": "relative", "height": "100%"});
             let input = $('#searchInput').val();
             let isNumeric = true;
             for (let i = 0; i < input.length; i++) {
@@ -168,7 +207,7 @@
                 let myCoordinates = saveCoordinates(inputValue);
                 let currentLocation = reverseGeocode(myCoordinates, MAPBOX_KEY);//reverse geocode function
                 console.log(currentLocation);
-                currentLocation.then(function(result) {
+                currentLocation.then(function (result) {
                     console.log(result)//coordinate results from search
                     console.log(inputValue)//input value
                     console.log(myCoordinates)//input value
@@ -194,8 +233,30 @@
         $('#exitBtn').click(function () {
             $('#results').css('display', 'none');
             $('#exitBtn').css('display', 'none');
+            $('#map').css({
+                "width": "100%",
+                "height": "600px",
+                "margin-left": "auto",
+                "margin-right": "auto",
+                "position": "relative",
+                "top": "0",
+                "left": "0"
+            });
+            $('#box1').css({"position": "relative", "width": "99%"});
             $('#searchInput').val('');
         });
+        var zoom = new mapboxgl.NavigationControl({
+            showCompass: true
+        });
+        map.addControl(new mapboxgl.FullscreenControl(), 'top-right');
+        var geolocate = new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        });
+        map.addControl(geolocate, 'top-right');
+        map.addControl(zoom, 'top-right');
     });
 
 </script>
