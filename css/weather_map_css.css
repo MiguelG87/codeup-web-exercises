@@ -28,3 +28,7 @@ li {
 #exitBtn {
     display: none;
 }
+img {
+    width: 60px;
+    height: auto;
+}
