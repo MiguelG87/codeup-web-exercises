@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <title>Weather Map Project</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet'/>
     <script src="js/weather_map_js.js"></script>
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link href="css/weather_map_css.css" rel="stylesheet">
 <body class="container-fluid">
 <nav class="navbar bg-body-tertiary bg-dark" data-bs-theme="dark" style="color: white">
     <div class="container-fluid">
         <a class="navbar-brand" style="color: white">Weather Map</a>
-        <span class="navbar-text city">
-      Current City:
+        <span id="currentCity" class="navbar-text city">
+
     </span>
     </div>
 </nav>
 <nav class="navbar bg-body-tertiary" style="background-color: white">
     <div class="container-fluid">
         <form class="d-flex" role="search">
-            <span class="navbar-text place">Place: </span>
-            <input id="searchInput" class="form-control-dark me-2" type="search" placeholder="Enter City or Zipcode..."aria-label="Search">
+            <label for="searchBtn" class="navbar-text place">Place: </label>
+            <input id="searchInput" class="form-control-dark me-2" type="search" placeholder="Search Location"
+                   aria-label="Search">
             <button class="btn btn-outline-dark" type="submit" id="searchBtn">Search</button>
         </form>
-        <button class="btn btn-danger btn-sm float-end" type="reset" id="exitBtn">X</button>
+        <button class="btn btn-danger btn-sm float-end"  type="reset" id="exitBtn">X</button>
     </div>
     <br>
     <br>
@@ -34,87 +36,85 @@
         <div class="col weather">
             <div class="card">
                 <ul class="list-group list-group-flush text-center">
-                    <li class="card-text">Date: </li>
+                    <li class="card-text" id="date1"></li>
                 </ul>
                 <div class="card-body">
-                    <p class="card-text">Weather: </p>
+                    <p class="card-text" id="weather1"></p>
                     <!--<img src="..." class="card-img-top" alt="...">-->
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Description:</li>
-                    <li class="list-group-item">Humidity:</li>
-                    <li class="list-group-item">Wind:</li>
-                    <li class="list-group-item">Pressure:</li>
+                    <li class="list-group-item" id="description1"></li>
+                    <li class="list-group-item" id="humidity1"></li>
+                    <li class="list-group-item" id="wind1"></li>
+                    <li class="list-group-item" id="pressure1"></li>
                 </ul>
             </div>
         </div>
         <div class="col weather">
             <div class="card">
                 <ul class="list-group list-group-flush text-center">
-                    <li class="card-text">Date: </li>
+                    <li class="card-text" id="date2"></li>
                 </ul>
                 <div class="card-body">
-                    <p class="card-text">Weather: </p>
-<!--
-                    <img src="..." class="card-img-top" alt="...">
--->
+                    <p class="card-text" id="weather2"></p>
+                    <!--<img src="..." class="card-img-top" alt="...">-->
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Description:</li>
-                    <li class="list-group-item">Humidity:</li>
-                    <li class="list-group-item">Wind:</li>
-                    <li class="list-group-item">Pressure:</li>
+                    <li class="list-group-item" id="description2"></li>
+                    <li class="list-group-item" id="humidity2"></li>
+                    <li class="list-group-item" id="wind2"></li>
+                    <li class="list-group-item" id="pressure2"></li>
                 </ul>
             </div>
         </div>
         <div class="col weather">
             <div class="card">
                 <ul class="list-group list-group-flush text-center">
-                    <li class="card-text">Date: </li>
+                    <li class="card-text" id="date3"></li>
                 </ul>
                 <div class="card-body">
-                    <p class="card-text">Weather: </p>
+                    <p class="card-text" id="weather3"></p>
                     <!--<img src="..." class="card-img-top" alt="...">-->
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Description:</li>
-                    <li class="list-group-item">Humidity:</li>
-                    <li class="list-group-item">Wind:</li>
-                    <li class="list-group-item">Pressure:</li>
+                    <li class="list-group-item" id="description3"></li>
+                    <li class="list-group-item" id="humidity3"></li>
+                    <li class="list-group-item" id="wind3"></li>
+                    <li class="list-group-item" id="pressure3"></li>
                 </ul>
             </div>
         </div>
         <div class="col weather">
             <div class="card">
                 <ul class="list-group list-group-flush text-center">
-                    <li class="card-text">Date: </li>
+                    <li class="card-text" id="date4"></li>
                 </ul>
                 <div class="card-body">
-                    <p class="card-text">Weather: </p>
+                    <p class="card-text" id="weather4"></p>
                     <!--<img src="..." class="card-img-top" alt="...">-->
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Description:</li>
-                    <li class="list-group-item">Humidity:</li>
-                    <li class="list-group-item">Wind:</li>
-                    <li class="list-group-item">Pressure:</li>
+                    <li class="list-group-item" id="description4"></li>
+                    <li class="list-group-item" id="humidity4"></li>
+                    <li class="list-group-item" id="wind4"></li>
+                    <li class="list-group-item" id="pressure4"></li>
                 </ul>
             </div>
         </div>
         <div class="col weather">
             <div class="card">
                 <ul class="list-group list-group-flush text-center">
-                    <li class="card-text">Date: </li>
+                    <li class="card-text" id="date5"></li>
                 </ul>
                 <div class="card-body">
-                    <p class="card-text">Weather: </p>
+                    <p class="card-text" id="weather5"></p>
                     <!--<img src="..." class="card-img-top" alt="...">-->
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Description:</li>
-                    <li class="list-group-item">Humidity:</li>
-                    <li class="list-group-item">Wind:</li>
-                    <li class="list-group-item">Pressure:</li>
+                    <li class="list-group-item" id="description5"></li>
+                    <li class="list-group-item" id="humidity5"></li>
+                    <li class="list-group-item" id="wind5"></li>
+                    <li class="list-group-item" id="pressure5"></li>
                 </ul>
             </div>
         </div>
@@ -125,33 +125,77 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function() {
-        $('#searchBtn').click(function(event){
+    mapboxgl.accessToken = MAPBOX_KEY;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 10.2,
+        center: [-97.309341, 32.768799]
+    });
+    const marker = new mapboxgl.Marker()
+        .setLngLat([-97.309341, 32.768799])
+        .addTo(map);
+    marker.on('dragend', updateMarkerCoordinates);
+    map.on('click', (event) => {
+        const newLngLat = event.lngLat;
+        marker.setLngLat(newLngLat);
+        console.log(newLngLat.lat);
+        updateMarkerCoordinates();
+        displayWeatherData(newLngLat.lat, newLngLat.lng);
+        $('#results').css('display', 'flex');
+        $('#exitBtn').css('display', 'flex');
+
+    });
+    $(document).ready(function () {
+        $('#searchBtn').click(function (event) {
             event.preventDefault();
             $('#results').css('display', 'flex');
             $('#exitBtn').css('display', 'flex');
+            let input = $('#searchInput').val();
+            let isNumeric = true;
+            for (let i = 0; i < input.length; i++) {
+                console.log('for loop')
+                if (!isNaN(input[i]) || input[i] === "," || input[i] === "." || input[i] === "-") {
+                    continue;
+                }
+                isNumeric = false;
+                break;
+            }
+            console.log(isNumeric);
+            if (isNumeric) {
+                let inputValue = $('#searchInput').val();
+                let myCoordinates = saveCoordinates(inputValue);
+                let currentLocation = reverseGeocode(myCoordinates, MAPBOX_KEY);//reverse geocode function
+                console.log(currentLocation);
+                currentLocation.then(function(result) {
+                    console.log(result)//coordinate results from search
+                    console.log(inputValue)//input value
+                    console.log(myCoordinates)//input value
+                    map.setCenter([result[1], result[0]])
+                    marker.setLngLat([result[1], result[0]]);
+                    console.log([result[0], result[1]]);
+                    displayWeatherData(result[0], result[1]);
+                });
+            } else {
+                let currentLocation = geocode($('#searchInput').val(), MAPBOX_KEY);//geocode function
+                console.log(currentLocation);
+                currentLocation.then(function (results) {
+                    console.log(results)//coordinate results from search
+                    console.log($('#searchInput').val())//input value
+                    map.setCenter([results[0], results[1]])
+                    marker.setLngLat([results[0], results[1]]);
+                    console.log([results[0], results[1]]);
+                    displayWeatherData(results[1], results[0]);
+                });
+            }
+
         });
-        $('#exitBtn').click(function(){
+        $('#exitBtn').click(function () {
             $('#results').css('display', 'none');
             $('#exitBtn').css('display', 'none');
             $('#searchInput').val('');
         });
     });
-    mapboxgl.accessToken = MAPBOX_KEY;
-    var map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        zoom: 10.2, // starting zoom
-        center: [-118.2437, 34.0522] // [lng, lat]
-    });
-    var cocosMarker = new mapboxgl.Marker()
-        //setting marker object location
-        .setLngLat([-118.274420, 33.959901])
-        //adding marker to map
-        .addTo(map);
-    let cocosPopup = new mapboxgl.Popup()
-        .setLngLat([-118.274420, 33.959901])
-        .setHTML("<h1>Roscoe's House of Chicken and Waffles</h1><h4>Cuisine: </h4><p>Soul, Southern</p><h4>Description: </h4><p>Roscoe's House of Chicken and Waffles specializes in serving a combination of fried chicken and waffles, which has become a signature dish. The menu at Roscoe's also includes other Southern and soul food dishes, such as grits, mac and cheese, collard greens, and sweet potato pie.</p>")
-    cocosMarker.setPopup(cocosPopup);
+
 </script>
 </html>
